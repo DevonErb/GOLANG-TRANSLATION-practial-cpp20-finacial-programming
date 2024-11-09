@@ -1,5 +1,4 @@
 # GOLANG-TRANSLATION-practial-cpp20-finacial-programming
-# GOLANG-TRANSLATION-practical-cpp20-financial-programming
 
 This repository provides a translation of key code examples from the book [*Practical C++20 Financial Programming* by Carlos Oliveira](https://github.com/Apress/practical-cpp20-financial-programming) into the Go programming language. The original book focuses on practical implementations of financial models and solutions using modern C++20 features. This project aims to reimplement these financial algorithms and concepts using Go, providing readers with the opportunity to explore financial programming through another powerful language with a different approach.
 
