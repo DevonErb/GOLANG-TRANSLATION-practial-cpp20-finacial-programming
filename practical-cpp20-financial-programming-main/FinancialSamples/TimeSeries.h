@@ -25,6 +25,7 @@ public:
     double mean();
     size_t size();
     double elem(int i);
+
 private:
     std::vector<double> m_values;
 };

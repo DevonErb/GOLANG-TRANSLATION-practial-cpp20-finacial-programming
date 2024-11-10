@@ -9,7 +9,7 @@
    tests it run this by doing go run OptionsProbilities.go
 */
 /* ------------------------------------------------- */
-package main
+package Opt_test
 
 import (
 	"fmt"
@@ -119,7 +119,7 @@ func (o *OptionsProbabilities) GetWalk() []float64 {
 	return walk
 }
 
-func main() {
+func Opt_test() {
 	optP := NewOptionsProbabilities(30, 35, 0.01, 100)
 
 	fmt.Println("Above strike probability:", optP.ProbFinishAboveStrike())
