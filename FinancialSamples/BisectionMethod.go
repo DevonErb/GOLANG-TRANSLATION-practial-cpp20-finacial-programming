@@ -54,7 +54,7 @@ func (f F1) Calculate(x float64) float64 {
 	return (x - 1) * (x - 1) * (x - 1)
 }
 
-func bi_test() {
+func Main_bisec() {
 	fmt.Println("---------")
 	fmt.Println("BisectionMethod Test")
 	fmt.Println("---------")

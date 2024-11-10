@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// Call the function from TimeSeries_test package
+	financialsamples.Main_bisec()
 	financialsamples.TimeSeries_test()
-	financialsamples.bi_test()
 	Opt_test.Opt_test()
 }
