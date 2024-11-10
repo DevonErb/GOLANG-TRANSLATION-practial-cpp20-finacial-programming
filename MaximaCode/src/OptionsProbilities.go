@@ -121,8 +121,11 @@ func (o *OptionsProbabilities) GetWalk() []float64 {
 
 func Opt_test() {
 	optP := NewOptionsProbabilities(30, 35, 0.01, 100)
-
+	fmt.Println("---------------")
+	fmt.Println("OptionsProbilities Test")
+	fmt.Println("---------------")
 	fmt.Println("Above strike probability:", optP.ProbFinishAboveStrike())
 	fmt.Println("Below strike probability:", optP.ProbFinishBelowStrike())
 	fmt.Println("Between 28 and 32 probability:", optP.ProbFinalPriceBetweenPrices(28, 32))
+	fmt.Println("---------------")
 }

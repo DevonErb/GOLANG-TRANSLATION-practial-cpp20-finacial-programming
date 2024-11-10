@@ -68,8 +68,9 @@ func (o *TimeSeries) elem(pos int64) float64 {
 }
 
 func TimeSeries_test() {
-	fmt.Println("Testing the TimeSeries struct")
-
+	fmt.Println("---------------")
+	fmt.Println("TimeSeries Test")
+	fmt.Println("---------------")
 	oTime := newTimeSeries()
 
 	oTime.addValue(1)
@@ -87,5 +88,5 @@ func TimeSeries_test() {
 
 	fmt.Printf(" element at 3  %v \n", oTime.elem(3))
 
-	fmt.Println("done")
+	fmt.Println("---------------")
 }
