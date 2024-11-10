@@ -12,7 +12,8 @@
 template <class T>
 class MathFunction;
 
-class BisectionMethod {
+class BisectionMethod
+{
 public:
 	BisectionMethod(MathFunction<double> &f);
 	BisectionMethod(const BisectionMethod &p);

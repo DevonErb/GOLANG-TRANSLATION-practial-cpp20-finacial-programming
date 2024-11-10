@@ -1,4 +1,4 @@
-package TimeSeries_test
+package financialsamples
 
 import (
 	"fmt"

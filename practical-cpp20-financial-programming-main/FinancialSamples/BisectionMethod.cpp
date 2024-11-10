@@ -15,28 +15,28 @@
 using std::cout;
 using std::endl;
 
-namespace {
-const double DEFAULT_ERROR = 0.001;
+namespace
+{
+	const double DEFAULT_ERROR = 0.001;
 }
 
 BisectionMethod::BisectionMethod(MathFunction<double> &f)
-: m_f(f),
-  m_error(DEFAULT_ERROR)
+	: m_f(f),
+	  m_error(DEFAULT_ERROR)
 {
 }
 
 BisectionMethod::BisectionMethod(const BisectionMethod &p)
-: m_f(p.m_f),
-  m_error(p.m_error)
+	: m_f(p.m_f),
+	  m_error(p.m_error)
 {
 }
-
 
 BisectionMethod::~BisectionMethod()
 {
 }
 
-BisectionMethod &BisectionMethod::operator =(const BisectionMethod &p)
+BisectionMethod &BisectionMethod::operator=(const BisectionMethod &p)
 {
 	if (this != &p)
 	{
@@ -53,7 +53,7 @@ double BisectionMethod::getRoot(double x1, double x2)
 	{
 		double x3 = (x1 + x2) / 2;
 		root = x3;
-        cout << "root is " << x3 << endl;  // this line just for demonstration
+		cout << "root is " << x3 << endl; // this line just for demonstration
 		if (m_f(x1) * m_f(x3) < 0)
 		{
 			x2 = x3;
@@ -64,7 +64,7 @@ double BisectionMethod::getRoot(double x1, double x2)
 		}
 		if (m_f(x1) * m_f(x2) > 0)
 		{
-			cout << " function does not converge "  << endl;
+			cout << " function does not converge " << endl;
 			break;
 		}
 	}
@@ -73,22 +73,24 @@ double BisectionMethod::getRoot(double x1, double x2)
 
 // ---- this is the implementation for an example function
 
-namespace {
-
-class F1 : public MathFunction<double> {
-public:
-	virtual ~F1();
-	virtual double operator()(double value);
-};
-
-F1::~F1()
+namespace
 {
-}
 
-double F1::operator ()(double x)
-{
-	return (x-1)*(x-1)*(x-1);
-}
+	class F1 : public MathFunction<double>
+	{
+	public:
+		virtual ~F1();
+		virtual double operator()(double value);
+	};
+
+	F1::~F1()
+	{
+	}
+
+	double F1::operator()(double x)
+	{
+		return (x - 1) * (x - 1) * (x - 1);
+	}
 
 }
 
