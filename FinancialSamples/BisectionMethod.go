@@ -14,22 +14,22 @@ type MathFunction interface {
 
 // BisectionMethod represents the method for finding roots using the bisection method
 type BisectionMethod struct {
-	f     MathFunction
-	error float64
+	f           MathFunction
+	errorNumber float64
 }
 
 // NewBisectionMethod creates a new BisectionMethod with a given function
 func NewBisectionMethod(f MathFunction) *BisectionMethod {
 	return &BisectionMethod{
-		f:     f,
-		error: defaultError,
+		f:           f,
+		errorNumber: defaultError,
 	}
 }
 
 // GetRoot calculates the root of the function between x1 and x2
 func (bm *BisectionMethod) GetRoot(x1, x2 float64) float64 {
 	var root float64
-	for math.Abs(x1-x2) > bm.error {
+	for math.Abs(x1-x2) > bm.errorNumber {
 		x3 := (x1 + x2) / 2
 		root = x3
 		fmt.Printf("root is %f\n", x3) // This line just for demonstration
