@@ -23,14 +23,18 @@ type TimeSeries struct {
 }
 
 func newTimeSeries() *TimeSeries {
-	return &TimeSeries{}
+	return &TimeSeries{
+		m_values: []float64{},
+	}
 }
 
-//
-/*func (o *TimeSeries) operator=(){
+func (o *TimeSeries) operatorEquals(ts *TimeSeries) {
+	if o != ts {
+		o.m_values = make([]float64, len(ts.m_values))
+		copy(o.m_values, ts.m_values)
+	}
+}
 
-}*/
-//
 func (o *TimeSeries) addValue(val float64) {
 	o.m_values = append(o.m_values, val)
 }
@@ -42,7 +46,7 @@ func (o *TimeSeries) mean() float64 {
 	for i := 0; i < len(o.m_values); i++ {
 		sum += o.m_values[i]
 	}
-	fmt.Printf(" average is %v", (sum / float64(len(o.m_values))))
+	fmt.Printf(" average is %v \n", (sum / float64(len(o.m_values))))
 	return sum / float64(len(o.m_values))
 }
 
@@ -87,6 +91,12 @@ func TimeSeries_test() {
 	fmt.Printf(" size  %v \n", oTime.size())
 
 	fmt.Printf(" element at 3  %v \n", oTime.elem(3))
+
+	oTime2 := newTimeSeries()
+
+	oTime2.operatorEquals(oTime)
+
+	fmt.Printf(" element at 3  %v \n", oTime2.elem(3))
 
 	fmt.Println("---------------")
 }
